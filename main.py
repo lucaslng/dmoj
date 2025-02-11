@@ -1,13 +1,1 @@
-import sys
-import math
-sys.setrecursionlimit(10000)
-
-n = int(input())
-a = [int(input()) for _ in range(n)]
-
-def f(i: int, j: int) -> int:
-  '''How many good subarrays are there from arr[i] to arr[j]?'''
-
-  if j - i == 1:
-    return a[i] / i
-  
+print((lambda n:(s:=[0,0]+[1]*-~n,[s.__setitem__(j,0)for i in range(2,int(n**.5)+2)if s[i]for j in range(i*i,n+3,i)],'\n'.join(str(p)+'*'*(s[p-2]|s[p+2])for p in range(2,n+1)if s[p]))[-1])(int(input())))
